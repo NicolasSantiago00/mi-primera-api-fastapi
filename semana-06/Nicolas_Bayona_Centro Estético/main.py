@@ -1,9 +1,9 @@
 # main.py
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .database import engine, get_db, Base
-from .schemas import TratamientoCreate, Tratamiento
-from .crud import create_tratamiento, get_tratamiento, get_tratamientos
+from database import engine, get_db, Base
+from schemas import TratamientoCreate, Tratamiento
+from crud import create_tratamiento, get_tratamiento, get_tratamientos
 from typing import List
 
 # ⚠️ Nota: Debes tener un archivo 'database.py' y 'schemas.py' para que esto funcione.
