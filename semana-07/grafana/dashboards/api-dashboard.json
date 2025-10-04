@@ -1,0 +1,51 @@
+{
+  "dashboard": {
+    "title": "API Performance - EDU Academia de Música",
+    "panels": [
+      {
+        "title": "Tasa de Requests (Clases y Horarios)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(edu_requests_total[5m])",
+            "legendFormat": "{{method}} {{endpoint}}"
+          }
+        ]
+      },
+      {
+        "title": "Tiempo de Respuesta (Foco en Disponibilidad)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(edu_response_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile (ms)"
+          }
+        ]
+      },
+      {
+        "title": "Recursos del Sistema (Durante Reservas)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "edu_cpu_usage_percent",
+            "legendFormat": "CPU Usage (%)"
+          },
+          {
+            "expr": "edu_memory_usage_bytes / 1024 / 1024",
+            "legendFormat": "Memory (MB)"
+          }
+        ]
+      },
+      {
+        "title": "Métricas de Negocio (Clases Reservadas)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "increase(edu_classes_booked_total[1h])",
+            "legendFormat": "Clases Reservadas (última hora)"
+          }
+        ]
+      }
+    ]
+  }
+}

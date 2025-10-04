@@ -1,0 +1,43 @@
+fastapi==0.110.0
+uvicorn==0.30.1
+sqlalchemy==2.0.30
+pydantic==2.11.4
+pydantic_core==2.33.2
+python-dotenv==1.1.1
+requests==2.32.4
+redis==4.5.1
+prometheus-client==0.17.1
+
+# Opcional pero compatibles:
+alembic==1.15.2
+Flask==3.1.1
+Flask-SQLAlchemy==3.1.1
+Jinja2==3.1.6
+
+# Testing
+pytest==7.2.0
+pytest-asyncio==0.21.1
+pytest-mock==3.12.0
+coverage==7.3.2
+
+# Linting
+flake8==7.3.0
+pycodestyle==2.14.0
+pyflakes==3.4.0
+mccabe==0.7.0
+
+# Dependencias de red y async:
+httpx==0.25.0
+sniffio==1.3.1
+attrs==25.3.0
+anyio==4.9.0
+idna==3.10
+certifi==2025.7.9
+urllib3==2.5.0
+typing_extensions==4.13.2
+packaging==25.0
+
+# Base utils
+colorama==0.4.6
+six==1.17.0
+PyYAML==6.0.2
